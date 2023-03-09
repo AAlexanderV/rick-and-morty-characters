@@ -1,11 +1,13 @@
 import "./Header.css";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { setFilterName } from "../../features/filterParameters/filterParametersSlice";
 import { setPage } from "../../features/currentPage/currentPageSlice";
 
 function Header() {
   const dispatch = useDispatch();
+
+  const filterName = useSelector((state) => state.filterParameters.name);
 
   return (
     <div className="Header">
@@ -35,6 +37,7 @@ function Header() {
             id="filter_input"
             name="filter_input"
             type="text"
+            value={filterName}
             placeholder="Filter by name..."
             onChange={(e) => {
               dispatch(setFilterName(e.target.value));

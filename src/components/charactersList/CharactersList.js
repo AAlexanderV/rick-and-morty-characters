@@ -16,7 +16,11 @@ function CharactersList() {
 
   useEffect(() => {
     setIsLoaded(false);
-    fetch(`https://rickandmortyapi.com/api/character?page=${currentPage}` + filterName)
+    fetch(
+      `https://rickandmortyapi.com/api/character?page=${currentPage}${
+        filterName ? "&name=" + filterName : ""
+      }`
+    )
       .then((response) => response.json())
       .then(
         (data) => {
@@ -49,6 +53,7 @@ function CharactersList() {
                 image={value.image}
                 name={value.name}
                 species={value.species}
+                id={value.id}
                 key={value.id}
               />
             );

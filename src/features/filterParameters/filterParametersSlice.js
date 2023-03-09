@@ -1,17 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = (() => {
-  const searchParams = new URLSearchParams(document.location.search);
+// const initialState = (() => {
+//   const searchParams = new URLSearchParams(document.location.search);
 
-  return { name: searchParams.get("name") ? "name=" + searchParams.get("name") : "" };
-})();
+//   return { name: searchParams.get("name") ? "name=" + searchParams.get("name") : "" };
+// })();
 
 export const filterParametersSlice = createSlice({
   name: "filterParameters",
-  initialState,
+  initialState: { name: "" },
   reducers: {
     setFilterName: (state, action) => {
-      state.name = action.payload ? "&name=" + action.payload : "";
+      state.name = action.payload;
     },
   },
 });
