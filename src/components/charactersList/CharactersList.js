@@ -33,6 +33,7 @@ function CharactersList() {
             dispatch(setRequestData(data));
           }
         },
+
         (error) => {
           console.log("result ERROR");
           setIsLoaded(true);

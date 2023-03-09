@@ -1,17 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const initialState = (() => {
-//   const searchParams = new URLSearchParams(document.location.search);
+const initialState = (() => {
+  const filterParameters = localStorage.getItem("filterParameters");
 
-//   return { name: searchParams.get("name") ? "name=" + searchParams.get("name") : "" };
-// })();
+  return filterParameters ? JSON.parse(filterParameters) : { name: "" };
+})();
 
 export const filterParametersSlice = createSlice({
   name: "filterParameters",
-  initialState: { name: "" },
+  initialState,
   reducers: {
     setFilterName: (state, action) => {
       state.name = action.payload;
+      localStorage.setItem("filterParameters", JSON.stringify(state));
     },
   },
 });
