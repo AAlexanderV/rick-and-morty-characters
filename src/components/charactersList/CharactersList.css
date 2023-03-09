@@ -1,0 +1,54 @@
+.CharactersList{
+    width: 100%;
+    height: fit-content;
+    margin: 40px 0;
+}
+
+.grid_wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content 1fr;
+    gap: 20px;
+}
+
+.CharacterItem{
+    width: 100%;
+    height: 244px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+}
+
+.character_img{
+    width: 100%;
+    height: 70%;
+}
+
+.character_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;    
+}
+
+.character_details{
+    width: 100%;
+    height: 30%;
+
+    padding: 10px 16px;
+}
+
+.character_details h2{
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    line-height: 20px;
+}
+
+.character_details p{
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.6);
+}
