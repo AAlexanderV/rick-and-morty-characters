@@ -5,7 +5,6 @@ import { prevPage, nextPage } from "../../features/currentPage/currentPageSlice"
 function Pagination() {
   const requestInfo = useSelector((state) => state.requestData.requestInfo);
   const currentPage = useSelector((state) => state.currentPage.value);
-
   const dispatch = useDispatch();
 
   return (
@@ -18,7 +17,7 @@ function Pagination() {
       </button>
 
       <button
-        disabled={currentPage >= requestInfo.pages}
+        disabled={requestInfo.pages ? currentPage >= requestInfo.pages : true}
         onClick={() => dispatch(nextPage())}
       >
         Next page &#62;

@@ -22,6 +22,11 @@ a{
     height: 244px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14);
     border-radius: 4px;
+    transition: all .2s linear;
+}
+.CharacterItem:hover{
+    scale: 1.05;
+    transform: rotate(3deg);
 }
 
 .character_img{
@@ -46,7 +51,7 @@ a{
 
 .character_details h2{
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0.15px;
     line-height: 20px;
 }

@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = (() => {
+const initialState = () => {
   const filterParameters = localStorage.getItem("filterParameters");
-
   return filterParameters ? JSON.parse(filterParameters) : { name: "" };
-})();
+};
 
 export const filterParametersSlice = createSlice({
   name: "filterParameters",

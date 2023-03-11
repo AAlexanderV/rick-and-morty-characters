@@ -1,6 +1,7 @@
 import "./CharacterPage.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import BackButton from "./BackButton";
 
 function CharacterPage() {
   const [error, setError] = useState(null);
@@ -8,7 +9,7 @@ function CharacterPage() {
   const [characterData, setCharacterData] = useState(null);
 
   const { characterId } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
@@ -36,50 +37,44 @@ function CharacterPage() {
   if (error) {
     return (
       <div className="CharacterPage">
-        <div className="back_section">
-          <button onClick={() => navigate(-1)}>GO BACK</button>
-        </div>
+        <BackButton />
         <h1>Sorry, {error}...</h1>
       </div>
     );
   } else if (isLoaded) {
     return (
       <div className="CharacterPage">
-        <div className="back_section">
-          <button onClick={() => navigate(-1)}>GO BACK</button>
-        </div>
+        <BackButton />
 
         <div className="character_section">
-          <div className="characterCard_wrapper">
-            <div className="character_img">
-              <img
-                src={characterData.image}
-                alt={characterData.name}
-              />
+          <div className="character_img">
+            <img
+              src={characterData.image}
+              alt={characterData.name}
+            />
+          </div>
+          <h1>{characterData.name}</h1>
+          <h2>Informations</h2>
+          <div className="details">
+            <div className="detils_item">
+              <h3>Gender</h3>
+              <p>{characterData.gender || "Unknown"}</p>
             </div>
-            <h1>{characterData.name}</h1>
-            <h2>Informations</h2>
-            <div className="details">
-              <div className="detils_item">
-                <h3>Gender</h3>
-                <p>{characterData.gender || "Unknown"}</p>
-              </div>
-              <div className="detils_item">
-                <h3>Status</h3>
-                <p>{characterData.status || "Unknown"}</p>
-              </div>
-              <div className="detils_item">
-                <h3>Specie</h3>
-                <p>{characterData.species || "Unknown"}</p>
-              </div>
-              <div className="detils_item">
-                <h3>Origin</h3>
-                <p>{characterData.origin.name || "Unknown"}</p>
-              </div>
-              <div className="detils_item">
-                <h3>Type</h3>
-                <p>{characterData.type || "Unknown"}</p>
-              </div>
+            <div className="detils_item">
+              <h3>Status</h3>
+              <p>{characterData.status || "Unknown"}</p>
+            </div>
+            <div className="detils_item">
+              <h3>Specie</h3>
+              <p>{characterData.species || "Unknown"}</p>
+            </div>
+            <div className="detils_item">
+              <h3>Origin</h3>
+              <p>{characterData.origin.name || "Unknown"}</p>
+            </div>
+            <div className="detils_item">
+              <h3>Type</h3>
+              <p>{characterData.type || "Unknown"}</p>
             </div>
           </div>
         </div>
@@ -88,9 +83,8 @@ function CharacterPage() {
   } else {
     return (
       <div className="CharacterPage">
-        <div className="back_section">
-          <button onClick={() => navigate(-1)}>GO BACK</button>
-        </div>
+        <BackButton />
+
         <h1>Loading...</h1>
       </div>
     );

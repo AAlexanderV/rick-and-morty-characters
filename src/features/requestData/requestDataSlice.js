@@ -1,26 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-function compare(a, b) {
-  if (a.name < b.name) {
-    return -1;
-  }
-  if (a.name > b.name) {
-    return 1;
-  }
-  return 0;
-}
+import compareFn from "./compareFn";
 
 export const requestDataSlice = createSlice({
   name: "requestData",
   initialState: { characters: [], requestInfo: {} },
   reducers: {
     setRequestData: (state, action) => {
-      state.characters = action.payload.results.sort(compare);
+      state.characters = action.payload.results.sort(compareFn);
       state.requestInfo = action.payload.info;
+    },
+
+    clearRequestInfo: (state) => {
+      state.requestInfo = {};
     },
   },
 });
 
-export const { setRequestData } = requestDataSlice.actions;
+export const { setRequestData, clearRequestInfo } = requestDataSlice.actions;
 
 export default requestDataSlice.reducer;

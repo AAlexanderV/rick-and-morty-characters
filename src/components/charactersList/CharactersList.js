@@ -1,7 +1,7 @@
 import "./CharactersList.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setRequestData } from "../../features/requestData/requestDataSlice";
+import { setRequestData, clearRequestInfo } from "../../features/requestData/requestDataSlice";
 
 import CharacterItem from "./CharacterItem";
 
@@ -28,6 +28,7 @@ function CharactersList() {
 
           if (data.error) {
             setError(data.error);
+            dispatch(clearRequestInfo());
           } else {
             setError(null);
             dispatch(setRequestData(data));
@@ -38,6 +39,7 @@ function CharactersList() {
           console.log("result ERROR");
           setIsLoaded(true);
           setError(error);
+          dispatch(clearRequestInfo());
         }
       );
   }, [dispatch, filterName, currentPage]);

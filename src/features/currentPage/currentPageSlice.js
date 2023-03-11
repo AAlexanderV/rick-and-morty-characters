@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = (() => {
+const initialState = () => {
   const currentPage = localStorage.getItem("currentPage");
-
   return currentPage ? JSON.parse(currentPage) : { value: 1 };
-})();
+};
 
 export const currentPageSlice = createSlice({
   name: "currentPage",
@@ -14,10 +13,12 @@ export const currentPageSlice = createSlice({
       state.value > 1 ? (state.value -= 1) : (state.value = 1);
       localStorage.setItem("currentPage", JSON.stringify(state));
     },
+
     nextPage: (state) => {
       state.value += 1;
       localStorage.setItem("currentPage", JSON.stringify(state));
     },
+
     setPage: (state, action) => {
       state.value = action.payload;
       localStorage.setItem("currentPage", JSON.stringify(state));
