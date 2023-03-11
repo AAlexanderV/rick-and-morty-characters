@@ -1,20 +1,35 @@
-.Pagination{
-    margin: 20px 0 50px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.Pagination {
+  margin: 20px 0 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.Pagination button{
-    margin-left: 54px;
-    background-color: #fff;
-    border: none;
-    font-weight: 700;
-    font-size: 18px;
-    cursor: pointer;
+.Pagination button {
+  background-color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.Pagination button:disabled{
-    cursor:not-allowed;
+.Pagination button:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 450px) {
+  .Pagination {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 350px) {
+  .Pagination {
+    padding: 0 15px;
+  }
+  .Pagination button {
+    font-size: 16px;
+  }
 }

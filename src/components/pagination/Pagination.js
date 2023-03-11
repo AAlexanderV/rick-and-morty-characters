@@ -13,7 +13,7 @@ function Pagination() {
         disabled={currentPage <= 1}
         onClick={() => dispatch(prevPage())}
       >
-        &#60; Previous page
+        &#60; Prev page
       </button>
 
       <button

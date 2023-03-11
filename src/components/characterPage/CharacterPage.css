@@ -1,101 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@800&display=swap");
 
-.CharacterPage{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.CharacterPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.back_section{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
+.back_section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.back_btn{
-    margin-left: 54px;
-    background-color: #fff;
-    border: none;
-    font-weight: 700;
-    font-size: 18px;
-    font-family: 'Karla', sans-serif;
-    cursor: pointer;
+.back_btn {
+  margin-top: 10px;
+  margin-left: 54px;
+  background-color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: "Karla", sans-serif;
+  cursor: pointer;
 }
 
-.arrow{
-    font-weight: 800;
-    font-size: 40px;
-    margin-right: 10px;
+.arrow {
+  font-weight: 800;
+  font-size: 40px;
+  margin-right: 10px;
 }
 
-.character_section{
-    width: 413px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+.character_section {
+  width: 413px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
 }
 
-.character_section .character_img{
-    width: 300px;
-    height: 300px;
-    margin-bottom: 16px;
+.character_section .character_img {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 16px;
 }
 
-.character_section .character_img img{
-    border-radius: 50%;
-    border: 5px solid #F2F2F7;
+.character_section .character_img img {
+  border-radius: 50%;
+  border: 5px solid #f2f2f7;
 }
 
 .character_section h1 {
-    
-    margin-bottom: 48px;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 56px;
-    text-align: center;
-    color: #081F32;
+  margin-bottom: 48px;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #081f32;
 }
 
-.character_section h2{
-    margin-bottom: 48px;
+.character_section h2 {
+  margin-bottom: 48px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15px;
+  color: #8e8e93;
+}
+
+.details {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.detils_item {
+  width: 100%;
+  padding: 9px 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.detils_item h3 {
+  margin-bottom: 3px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: #081f32;
+}
+.detils_item p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #6e798c;
+}
+
+@media (max-width: 500px) {
+  .character_section .character_img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .character_section h1 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .character_section h2 {
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    text-align: center;
-    letter-spacing: 0.15px;  
-    color: #8E8E93;
+  }
+
+  .details{
+    padding: 0 20px;
+    }
 }
 
-.details{
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:flex-start;
-}
+@media (max-width: 420px) {
+    .character_section{
+        width: 90%;
+    }
 
-.detils_item{
-    width: 100%;
-    padding: 9px 0;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #d1d1d1;
-}
+    .character_section h1 {
+        margin-bottom: 32px;
+    }
 
-.detils_item h3{
-    margin-bottom: 3px;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.15px;
-    color: #081F32;
-}
-.detils_item p{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 0.25px;
-    color: #6E798C;
+    .character_section h2 {
+        margin-bottom: 20px;
+    }
 }
