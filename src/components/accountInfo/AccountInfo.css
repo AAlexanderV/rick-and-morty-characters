@@ -1,0 +1,98 @@
+.AccountInfo {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user_details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user_name {
+  margin-right: 10px;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+}
+
+.user_name span {
+  font-weight: 500;
+}
+
+.user_img {
+  margin-right: 40px;
+}
+
+.user_img img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 128, 9);
+}
+
+.AccountInfo button {
+  background-color: #d60303;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
+.AccountInfo button:hover {
+  opacity: 0.8;
+  scale: 0.97;
+}
+
+@media (max-width: 850px) {
+  .AccountInfo {
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+
+  .user_details {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user_name {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .user_img {
+    margin: 0 0 5px 0;
+  }
+
+  .user_img img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .AccountInfo button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .AccountInfo {
+    padding: 0;
+  }
+
+  .user_name {
+    font-size: 14px;
+  }
+
+  .AccountInfo button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}

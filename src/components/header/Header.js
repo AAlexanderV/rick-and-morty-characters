@@ -4,12 +4,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { setFilterName } from "../../features/filterParameters/filterParametersSlice";
 import { setPage } from "../../features/currentPage/currentPageSlice";
 
+import AccountInfo from "../accountInfo/AccountInfo";
+
 function Header() {
   const dispatch = useDispatch();
   const filterName = useSelector((state) => state.filterParameters.name);
 
   return (
     <div className="Header">
+      <AccountInfo />
+
       <div className="logo">
         <img
           src={require("../../data/images/header_logo.png")}
